@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjectQuiz</title>
+    <link rel="stylesheet" href="Quiz.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="page1">
+            <header>
+                <h2>Quizpop</h2>
+                <h2>User Create</h2>
+            </header>
+
+
+            <div class="pages">
+                <div class="left">
+                    <h1>Take your knowledge to Next level</h1>
+                    <a id="start" href="">Start Quiz </a>
+                </div>
+                <div class="Right">
+                    <img src="photo2.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="page2">
+            <nav>
+                <h2>Quiz Pop</h2>
+                <ul>
+                    <li>Home</li>
+                    <li>Quiz</li>
+                    <li>Score</li>
+                </ul>
+                <p>Logo</p>
+            </nav>
+
+
+            <h1>Welcome To Quiz App</h1>
+            <p>Select Topic</p>
+
+            <div class="ancer">
+                <a href="">Music </a>
+                <a href="">Modern Art</a>
+                <a href="">Coding </a>
+                <button>Start</button>
+            </div>
+        </div>
+        <div class="page3">
+            <div class="quiz_question">
+                <h4 class="question"></h4>
+                <ul>
+                    <li> <input type="radio" name="option" class="quiz1">
+                        <label for="option" id="ans1"> Answer </label>
+                    </li>
+
+                    <li><input type="radio" name="option" class="quiz1">
+                        <label for="option2" id="ans2"> Answer </label>
+                    </li>
+
+                    <li> <input type="radio" name="option" class="quiz1">
+                        <label for="option3" id="ans3"> Answer </label>
+                    </li>
+
+                    <li> <input type="radio" name="option" class="quiz1">
+                        <label for="option4" id="ans4"> Answer </label>
+                    </li>
+
+                </ul>
+
+                <button class="submit"> submit</button>
+
+
+            </div>
+        </div>
+
+    </div>
+    <script>
+
+        let ques = document.querySelector('.question')
+        let btn = document.querySelector(".ancer button")
+        let page = document.querySelector(".page1")
+        let page2 = document.querySelector(".page2")
+        let ancor = document.querySelectorAll(".ancer a")
+        let start = document.querySelector("#start")
+        // let  Coding = document.querySelector(".code")
+
+
+        let questions = [
+            {
+                q: "When was the Ashes first played",
+                option1: 1872,
+                option2: 1877,
+                option3: 1882,
+                option4: 1887
+            },
+            {
+                q: " Who won the first ever Cricket World Cup in 1975?",
+                option1: 'England',
+                option2: 'Indies',
+                option3: 'Australia',
+                option4: 'India'
+            }
+        ]
+        //question items
+        let opt1 = document.querySelector('#ans1')
+        let opt2 = document.querySelector('#ans2')
+        let opt3 = document.querySelector('#ans3')
+        let opt4 = document.querySelector('#ans4')
+        let answer = document.querySelectorAll('.quiz')
+        
+
+
+
+
+        start.onclick = (e) => {
+            e.preventDefault()
+            page.style.display = "none";
+        }
+
+        for (let i = 0; i < ancor.length; i++) {
+            ancor[i].onclick = (e) => {
+                e.preventDefault()
+                ancor[i].style.border = '2px solid yellow'
+            }
+        }
+        btn.onclick = () => {
+            page2.style.display = 'none'
+            ques.innerText = questions[1].q
+            opt1.innerText=questions[1].option1
+            opt2.innerText=questions[1].option2
+            opt3.innerText=questions[1].option3
+            opt4.innerText=questions[1].option4
+            let time=0
+
+            setTimeout(() => {
+                time++
+                // ques.innerText=questions[Math.floor(Math.random()*questions.length-1)]
+            }, 1000)
+        }
+
+
+    </script>
+</body>
+
+</html>
