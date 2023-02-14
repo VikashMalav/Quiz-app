@@ -52,6 +52,7 @@
         </div>
         <div class="page3">
             <div class="quiz_question">
+                <h6>Time:<span id="time">15</span></h6>
                 <h4 class="question"></h4>
                 <ul>
                     <li> <input type="radio" name="option" class="quiz1">
@@ -72,7 +73,7 @@
 
                 </ul>
 
-                <button class="submit"> submit</button>
+                <button class="submit"> Submit</button>
 
 
             </div>
@@ -104,7 +105,15 @@
                 option2: 'Indies',
                 option3: 'Australia',
                 option4: 'India'
+            },
+            {
+                q: "Raising both hands above the head is used to signal what by the empire?",
+                option1: 'Foul',
+                option2: '6 Runs',
+                option3: '4 Runs',
+                option4: 'Out'
             }
+
         ]
         //question items
         let opt1 = document.querySelector('#ans1')
@@ -112,7 +121,8 @@
         let opt3 = document.querySelector('#ans3')
         let opt4 = document.querySelector('#ans4')
         let answer = document.querySelectorAll('.quiz')
-        
+        t = document.querySelector('#time')
+
 
 
 
@@ -131,18 +141,29 @@
         btn.onclick = () => {
             page2.style.display = 'none'
             ques.innerText = questions[1].q
-            opt1.innerText=questions[1].option1
-            opt2.innerText=questions[1].option2
-            opt3.innerText=questions[1].option3
-            opt4.innerText=questions[1].option4
-            let time=0
+            opt1.innerText = questions[1].option1
+            opt2.innerText = questions[1].option2
+            opt3.innerText = questions[1].option3
+            opt4.innerText = questions[1].option4
 
-            setTimeout(() => {
-                time++
-                // ques.innerText=questions[Math.floor(Math.random()*questions.length-1)]
-            }, 1000)
+            Time()
+            // setInterval(() => {
+
+                ques.innerText =
+                    (questions[Math.floor(Math.random() * questions.length - 1)].q)
+            // }, 1000)
         }
-
+        const stop=setInterval( function Time(){
+            // var time = 15
+            if (time < 0) {
+            clearInterval(stop)
+            }
+            else(
+                t.innerHTML=
+                Number(t.innerHTML)-1
+            )
+        },1000)
+       
 
     </script>
 </body>

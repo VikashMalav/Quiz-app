@@ -34,7 +34,7 @@ header {
 }
 
 .left a {
-    background-color:cyan;
+    background-color: cyan;
     padding: 1rem 3rem;
 }
 
@@ -125,21 +125,42 @@ nav ul li {
     border-radius: 10px;
 
 }
-.page3{display: flex;
+
+.page3 {
+    display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgb(237, 250, 56);
     height: 100vh;
 
 }
-.quiz_question{
-    padding:20px 10px ;
+
+.quiz_question {
+    padding: 20px 10px;
     /* text-align: center; */
     font-size: 2rem;
     width: 60vw;
     height: 60vh;
     background-color: #ebf0f3c7;
 }
-li{
+
+li {
     list-style: none;
+}
+
+.quiz_question h6 {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.quiz_question button {
+    padding: 0.5rem 1.2rem;
+    margin-left: 1.5rem;
+    margin-top: 2rem;
+    border-radius: 0.4rem;
+    font-size:1.2rem;
+}
+.quiz_question button:hover{
+    background-color: #3216163b;
 }
